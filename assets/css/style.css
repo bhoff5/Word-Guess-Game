@@ -1,0 +1,355 @@
+#screenWord {
+  letter-spacing: 10px;
+  color: rgb(248, 133, 133);
+  font-size: 30px;
+  
+}
+
+h3 {
+  font-family: 'Fauna One', Arial;
+  font-size: 18px;
+  margin: 18px;
+}
+
+#screenWord {
+  margin: 50px 0;
+}
+
+#guessedLetters {
+  height: 30px;
+}
+
+#guessesRemaining {
+  width: 20px;
+  padding: 10px;
+  margin: auto;
+  background-color: rgb(248, 133, 133);
+  border-radius: 20%;
+  color: white;
+
+}
+
+body{
+  background-color: #ccd3ad75;
+  font-size: 18px;
+  font-family: 'Fauna One', Arial;
+  color: rgb(82, 80, 80);
+}
+
+#animate-area	{ 
+width: 1500px; 
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+
+}
+
+#island {
+  width: 600px; 
+height: 250px; 
+  background-position: 0px 0px;
+  background-image: url(../images/island.png);
+  background-size: 100% 100%;
+  position: absolute;
+  z-index: -998;
+  bottom: -20px;
+  right: 350px;
+
+
+}
+
+#wave2 {
+  width: 1500px; 
+  height: 200px; 
+  background-position: -50px 0px;
+  animation: wave1 6s linear infinite;
+  animation-delay: 0s;
+  background-image: url(../images/wave2.png);
+  background-size: 100% 100%;
+  background-repeat: repeat-x;
+  position: absolute;
+  z-index: -1000;
+  bottom: -50px;
+  left: -50px;
+}
+
+#wave1 {
+  width: 1500px; 
+height: 200px; 
+  background-position: -50px 20px;
+  animation: wave1 6s linear infinite;
+  animation-delay: 1s;
+  background-image: url(../images/wave1.png);
+  background-size: 100% 100%;
+  background-repeat: repeat-x;
+  position: absolute;
+  z-index: -999;
+  bottom: -50px;
+  left: -50px;
+}
+
+#wave4 {
+  width: 1500px; 
+  height: 200px; 
+  background-position: -50px 40px;
+  animation: wave1 6s linear infinite;
+  animation-delay: 0s;
+  background-image: url(../images/wave2.png);
+  background-size: 100% 100%;
+  background-repeat: repeat-x;
+  position: absolute;
+  z-index: -997;
+  bottom: -50px;
+  left: -50px;
+}
+
+#wave3 {
+  width: 1500px; 
+height: 200px; 
+  background-position: -50px 60px;
+  animation: wave1 6s linear infinite;
+  animation-delay: 1s;
+  background-image: url(../images/wave1.png);
+  background-size: 100% 100%;
+  background-repeat: repeat-x;
+  position: absolute;
+  z-index: -996;
+  bottom: -50px;
+  left: -50px;
+}
+
+#wave6 {
+  width: 1500px; 
+  height: 200px; 
+  background-position: -50px 80px;
+  animation: wave1 6s linear infinite;
+  animation-delay: 0s;
+  background-image: url(../images/wave2.png);
+  background-size: 100% 100%;
+  background-repeat: repeat-x;
+  position: absolute;
+  z-index: -995;
+  bottom: -50px;
+  left: -50px;
+}
+
+#wave5 {
+  width: 1500px; 
+  height: 200px; 
+  background-position: -50px 100px;
+  animation: wave1 6s linear infinite;
+  animation-delay: 1s;
+  background-image: url(../images/wave1.png);
+  background-size: 100% 100%;
+  background-repeat: repeat-x;
+  position: absolute;
+  z-index: -994;
+  bottom: -50px;
+  left: -50px;
+}
+
+#treetrunk {
+  width: 200px; 
+  height: 400px; 
+  background-position: 0px 0px;
+  background-image: url(../images/treetrunk.png);
+  background-size: 100% 100%;
+  position: absolute;
+  z-index: -990;
+  bottom: 160px;
+  right: 550px;
+}
+
+#leftleaves {
+  width: 190px; 
+  height: 200px; 
+  background-position: 0px 0px;
+  background-image: url(../images/left_leaves.png);
+  background-size: 100% 100%;
+  position: absolute;
+  z-index: -990;
+  bottom: 366px;
+  right: 617px;
+  animation: rotate 16s ease-in-out alternate infinite;
+
+}
+
+
+#rightleaves {
+  width: 200px; 
+  height: 200px; 
+  background-position: 0px 0px;
+  background-image: url(../images/right_leaves.png);
+  background-size: 100% 100%;
+  position: absolute;
+  z-index: -990;
+  bottom: 475px;
+  right: 550px;
+}
+
+#coconuts {
+  width: 50px; 
+  height: 50px; 
+  background-position: 0px 0px;
+  background-image: url(../images/coconuts.png);
+  background-size: 100% 100%;
+  position: absolute;
+  z-index: -990;
+  bottom: 535px;
+  right: 715px;
+}
+
+@keyframes wave1 {
+  
+from {
+  transform: rotate(0deg)
+             translate(-6px)
+             rotate(0deg);
+}
+to {
+  transform: rotate(360deg)
+             translate(-6px) 
+             rotate(-360deg);
+  }
+}
+
+@keyframes rotate {
+0% {
+  transform-origin: 30% 3%;
+  transform: rotate(60deg)
+}
+
+100% {
+  transform-origin: 30% 3%;
+    transform: rotate(100deg)
+}
+  }
+
+
+#wrapper {
+  height: 600px;
+  width: 980px;
+  overflow: hidden;
+  position: relative;
+  z-index: 100;
+  margin: auto;
+  margin-top: 50px;
+  background-color: lightblue;
+  border: 10px solid #6e97b0;
+}
+
+
+#gamecontent {
+  position: relative;
+  width: 400px;
+  height: 100%;
+  margin: auto;
+  background-color: rgb(255, 255, 255, 0.5);
+  padding: 20px;
+  text-align: center;
+  
+}
+
+ #cloud1 {
+  animation: cloudAnimation 60s linear infinite;
+  animation-delay: 30s;
+  background-image: url(../images/cloud.png);
+  background-size: 100% 100%;
+  position: absolute;
+  z-index: -993;
+  height: 100px;
+  width: 150px;
+  opacity: 0.3;
+  top: 100px;
+  left: -300px;
+
+} 
+
+#cloud2 {
+  animation: cloudAnimation 110s linear infinite;
+  background-image: url(../images/cloud.png);
+  background-size: 100% 100%;
+  position: absolute;
+  z-index: -993;
+  height: 50px;
+  width: 100px;
+  opacity: 0.1;
+  top: 300px;
+  left: -300px;
+} 
+
+#cloud3 {
+  animation: cloudAnimation 90s linear infinite;
+  animation-delay: 60s;
+  background-image: url(../images/cloud.png);
+  background-size: 100% 100%;
+  position: absolute;
+  z-index: -999;
+  height: 75px;
+  width: 125px;
+  opacity: 0.2;
+  top: 350px;
+  left: -300px;
+
+} 
+
+@keyframes cloudAnimation {
+  0% {
+      left: -300px;
+  }
+  100% {
+      left: 100%;
+  }
+}
+
+#map img {
+  height: 100%;
+  width: auto;
+  position: relative;
+}
+
+#map {
+  margin-top: 50px;
+  height: 100px;
+}
+
+#logo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  height: 150px;
+  z-index: 2000;
+  opacity: 0.9;
+}
+
+#logo img {
+  height: 100%;
+}
+
+.animateMessage {
+  z-index: 5000;
+  font-size: 120px;
+  font-family: 'Fauna One', Arial;
+  animation: messageAnimation 4s;
+  position: absolute;
+  text-align: center;
+  top: 300px;
+  width: 100%;
+  color: rgb(248, 133, 133);
+  font-weight: bolder;
+  opacity: 0;
+  text-shadow: 10px;
+}
+
+@keyframes messageAnimation {
+  0% {
+      transform: scale(0);
+      opacity: 1;
+  }
+
+
+  100% {
+      transform: scale(4);
+      opacity: 0;      
+  }
+}

@@ -1,16 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link src="assets/javascript/games.js">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
 </head>
 
 <body>
 
+    <div id="wrapper">
+        <div id="logo"><img src="assets/images/logo.png"></div>
+        <div id="animate-area">
+            <div id="wave1"></div>
+            <div id="wave2"></div>
+            <div id="wave3"></div>
+            <div id="wave4"></div>
+            <div id="wave5"></div>
+            <div id="wave6"></div>
+            <div id="island"></div>
+            <div id="treetrunk"></div>
+            <div id="leftleaves"></div>
+            <div id="rightleaves"></div>
+            <div id="coconuts"></div>
+            <div id="cloud1"></div>
+            <div id="cloud2"></div>
+            <div id="cloud3"></div>
+
+        </div>
+        <div id="gamecontent">
+            <div id="gametext">
+                <div id="map"></div>
+                <p id="screenWord"></p>
+
+                <h3>Number of Guesses Remaining:</h3>
+                <p id="guessesRemaining"></p>
+
+
+                <h3>Letters Already Guessed:</h3>
+                <p id="guessedLetters"></p>
+
+
+                <h3>Total Wins:</h3>
+                <p id="wins"></p>
+
+                <div id="message"></div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script type="text/javascript" src="assets/javascript/games.js"></script>
 </body>
 
 </html>
