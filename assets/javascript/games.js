@@ -1,29 +1,36 @@
 
+
+
 var wins = 0;
 var screenWord = [];
 var guessWord = "";
 var guessesRemaining = 5;
 var guessedLetters = [];
 var letter;
-var wordBank = ["borneo", "tasmania", "great britain", "cuba", "iceland", "sri lanka", "hispaniola", "madagascar", "honshu"]
+var wordBank = ["borneo", "tasmania", "great britain", "cuba", "iceland", "sri lanka", "hispaniola", "madagascar", "honshu", "taiwan", "baffin island", "ireland", "new guinea"]
 var mapURL = "";
+var pause = false;
 
-
-// key press
 
 initialize()
 
+//key press
 document.onkeyup = function (event) {
-  if (event.keyCode >= 65 && event.keyCode <= 90) {
-    letter = event.key.toUpperCase()
-    checkLetter(letter)
+  if (event.keyCode >= 65 && event.keyCode <= 90 && pause === false) {
+    letter = event.key.toUpperCase();
+    checkLetter(letter);
+    var audio = new Audio("assets/sounds/key-new-01.wav");
+    audio.play();
+  }
+  if (event.keyCode === 13) {
+    $("#tutorial").addClass("tutorial").text("")
   }
 }
 
 function checkLetter(letter) {
   var foundLetter = false;
 
-
+  // Win game
   for (i = 0; i < guessWord.length; i++) {
     if (guessWord[i] === letter) {
       screenWord[i] = letter;
@@ -33,7 +40,10 @@ function checkLetter(letter) {
       }
       if (screenWord.join("") === guessWord) {
         wins++;
-        $("#message").addClass("animateMessage").text("You Win!")
+        $("#message").addClass("animateMessage").text("You Win!");
+        pause = true;
+        var audio = new Audio("assets/sounds/winsound.mp3");
+        audio.play();
         setTimeout(function () {
           initialize()
         }, 3000);
@@ -41,7 +51,8 @@ function checkLetter(letter) {
     }
   }
 
-  if (!foundLetter && !guessedLetters.includes(letter)) {
+  // Wrong answer
+  if (!foundLetter && !guessedLetters.includes(letter) && guessesRemaining > 0) {
     foundLetter = false;
     guessesRemaining--
     guessedLetters.push(letter)
@@ -62,11 +73,16 @@ function checkLetter(letter) {
     }
   }
 
+  // Lose game loop
+
   if (guessesRemaining === 0) {
     for (i = 0; i < guessWord.length; i++) {
       screenWord[i] = guessWord[i];
     }
     $("#message").addClass("animateMessage").text("You Lose!");
+    pause = true;
+    var audio = new Audio("assets/sounds/losesound.wav");
+    audio.play();
     setTimeout(function () {
       initialize()
     }, 3000);
@@ -75,7 +91,9 @@ function checkLetter(letter) {
   display()
 }
 
+//initialize
 function initialize() {
+  pause = false;
   guessesRemaining = 5;
   screenWord = [];
   guessWord = wordBank[Math.floor(Math.random() * wordBank.length)].toUpperCase()
@@ -97,6 +115,7 @@ function initialize() {
     else (screenWord[i] = "_")
   }
   guessedLetters = [];
+
 
   if (guessWord === "BORNEO") {
     $("#map").append("<img src=\"assets/images/borneo.png\">")
@@ -125,7 +144,18 @@ function initialize() {
   if (guessWord === "HONSHU") {
     $("#map").append("<img src=\"assets/images/honshu.png\">")
   }
-
+  if (guessWord === "TAIWAN") {
+    $("#map").append("<img src=\"assets/images/taiwan.png\">")
+  }
+  if (guessWord === "BAFFIN ISLAND") {
+    $("#map").append("<img src=\"assets/images/baffin_island.png\">")
+  }
+  if (guessWord === "IRELAND") {
+    $("#map").append("<img src=\"assets/images/ireland.png\">")
+  }
+  if (guessWord === "NEW GUINEA") {
+    $("#map").append("<img src=\"assets/images/new_guinea.png\">")
+  }
 
   display()
 }

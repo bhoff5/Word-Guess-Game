@@ -235,7 +235,7 @@ to {
   margin: auto;
   margin-top: 50px;
   background-color: lightblue;
-  border: 10px solid #6e97b0;
+  border: 10px solid #6e97b091;
 }
 
 
@@ -343,13 +343,33 @@ to {
 
 @keyframes messageAnimation {
   0% {
-      transform: scale(0);
-      opacity: 1;
+    transform: scale(0);
+    opacity: 1;
   }
 
-
+  
   100% {
       transform: scale(4);
       opacity: 0;      
+    }
   }
-}
+  
+  #tutorial {
+    z-index: 8000;
+    color: white;
+    background-color: rgb(248, 133, 133);
+    height: 200px;
+    width: 300px;
+    font-size: 20px;
+    font-family: 'Fauna One', Arial;
+    position: absolute;
+    text-align: center;
+    top: 140px;
+    left: 40px;
+    padding: 30px;
+    box-shadow: 0px 1px 20px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .tutorial {
+    display: none;
+  }
